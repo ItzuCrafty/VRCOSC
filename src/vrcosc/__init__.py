@@ -1,5 +1,6 @@
 from __future__ import annotations
 from pythonosc.udp_client import SimpleUDPClient
+import time
 
 class VRCOSC:
     def __init__(self, host:str="127.0.0.1", port:int=9000) -> None:
@@ -12,3 +13,8 @@ class VRCOSC:
 
     def chatbox_typing(self, typing:bool=True) -> None:
         self.client.send_message("/chatbox/typing", typing)
+
+    def jump(self) -> None:
+        self.client.send_message("/input/Jump", 1)
+        time.sleep(0.01)
+        self.client.send_message("/input/Jump", 0)

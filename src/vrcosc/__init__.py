@@ -18,3 +18,18 @@ class VRCOSC:
         self.client.send_message("/input/Jump", 1)
         time.sleep(0.01)
         self.client.send_message("/input/Jump", 0)
+
+    def running(self, running:bool=True) -> None:
+        self.client.send_message("/input/Run", running)
+
+    def moving_forward(self, moving:bool=True) -> None:
+        self.client.send_message("/input/MoveForward", moving)
+
+    def moving_backward(self, moving:bool=True) -> None:
+        self.client.send_message("/input/MoveBackward", moving)
+
+    def moving_left(self, moving:bool=True) -> None:
+        self.client.send_message("/input/MoveLeft", moving)
+
+    def moving_right(self, moving:bool=True) -> None:
+        self.client.send_message("/input/MoveRight", moving)

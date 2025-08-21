@@ -18,8 +18,8 @@ You can install VRCOSC using pip:
 pip install vrcosc
 ```
 
-## Usage
-An example of how you can use VRCOSC:
+## Examples
+### Chatbox
 ```python
 import vrcosc
 
@@ -35,6 +35,29 @@ vrc.chatbox_input()
 # Show/hide the typing indicator
 vrc.chatbox_typing(True)
 vrc.chatbox_typing(False)
+```
+### Movement
+```python
+import vrcosc
+import time
+
+vrc = vrcosc.VRCOSC()
+
+# Jump
+vrc.jump()
+
+# Walk forward for 0.5 seconds
+# Other directions: moving_backwards, moving_left, moving_right
+vrc.moving_forward(True)
+time.sleep(0.5)
+vrc.moving_forward(False)
+
+# Run forward for 0.5 seconds
+vrc.running(True)
+vrc.moving_forward(True)
+time.sleep(0.5)
+vrc.moving_forward(False)
+vrc.running(False)
 ```
 
 ## License

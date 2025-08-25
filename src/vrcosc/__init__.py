@@ -33,3 +33,6 @@ class VRCOSC:
 
     def moving_right(self, moving:bool=True) -> None:
         self.client.send_message("/input/MoveRight", moving)
+
+    def avatar_parameter(self, parameter:str, value:any) -> None:
+        self.client.send_message(f"/avatar/parameters/{parameter}", value)
